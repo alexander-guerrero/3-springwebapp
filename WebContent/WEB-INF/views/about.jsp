@@ -7,6 +7,6 @@
 <title>Spring MVC</title>
 </head>
 <body>
-	<h1>Index.jsp</h1>
+	<h1>About :)</h1>
 </body>
 </html>
