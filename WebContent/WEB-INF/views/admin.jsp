@@ -8,9 +8,9 @@
 <title>Spring MVC</title>
 </head>
 <body>
-	<h1>About :)</h1>
+	<h1>Admin.jsp</h1>
 	<a href='<c:url value="/" />'>Home</a> |
-	<a href='<c:url value="/admin" />'>Admin</a>
+	<a href='<c:url value="/about" />'>About</a>
 	<p>
 		<strong>Admin.jsp: </strong>
 		<c:out value="${txtAdmin}" />

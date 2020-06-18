@@ -9,7 +9,25 @@
 </head>
 <body>
 	<h1>Index.jsp</h1>
-	<h2><c:out value="Hola :D" /></h2>
-	<a href='<c:url value="/about" />'>About</a>
+	<a href='<c:url value="/about" />'>About</a> |
+	<a href='<c:url value="/admin" />'>Admin</a>
+	<p>
+		<strong>Admin.jsp: </strong>
+		<c:out value="${txtAdmin}" />
+	</p>
+	<p>
+		<strong>Index.jsp: </strong>
+		<c:out value="${sessionScope.txtIndex}" />
+	</p>
+	<p>
+		<strong>About.jsp: </strong>
+		<c:out value="${sessionScope.txtAbout}" />
+	</p>
+	<p>
+		Las variables de sesión se pueden referenciar de forma implícita
+		omitiendo el Scope. Tener en cuenta la información de <a
+			href="https://stackoverflow.com/questions/17590620/are-session-and-sessionscope-the-same-in-jsp-el"
+			target="_blank">aquí</a>.
+	</p>
 </body>
 </html>
