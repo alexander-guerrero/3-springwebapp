@@ -13,7 +13,7 @@
 	<a href='<c:url value="/" />'>Home</a> |
 	<a href='<c:url value="/about" />'>About</a>
 
-	<sf:form action="${pageContext.request.contextPath}/admin/save"
+	<sf:form action="${pageContext.request.contextPath}/admin"
 		method="post" commandName="admin">
 		<table>
 			<tr>

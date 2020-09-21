@@ -12,10 +12,6 @@
 	<a href='<c:url value="/" />'>Home</a> |
 	<a href='<c:url value="/admin" />'>Admin</a>
 	<p>
-		<strong>Admin.jsp: </strong>
-		<c:out value="${txtAdmin}" />
-	</p>
-	<p>
 		<strong>Index.jsp: </strong>
 		<c:out value="${sessionScope.txtIndex}" />
 	</p>

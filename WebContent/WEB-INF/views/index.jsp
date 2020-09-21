@@ -12,10 +12,6 @@
 	<a href='<c:url value="/about" />'>About</a> |
 	<a href='<c:url value="/admin" />'>Admin</a>
 	<p>
-		<strong>Admin.jsp: </strong>
-		<c:out value="${txtAdmin}" />
-	</p>
-	<p>
 		<strong>Index.jsp: </strong>
 		<c:out value="${sessionScope.txtIndex}" />
 	</p>
@@ -28,6 +24,10 @@
 		omitiendo el Scope. Tener en cuenta la información de <a
 			href="https://stackoverflow.com/questions/17590620/are-session-and-sessionscope-the-same-in-jsp-el"
 			target="_blank">aquí</a>.
+	</p>
+	<p>
+		Respuesta luego de enviar el formulario: <br />
+		<c:out value="${adminForm}" />
 	</p>
 </body>
 </html>
