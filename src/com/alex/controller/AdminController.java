@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.alex.pojo.Admin;
@@ -23,13 +24,15 @@ public class AdminController {
 
 	// Atiende el request de tipo POST
 	@RequestMapping(value = "/admin", method = RequestMethod.POST)
-	public String handleAdmin(@ModelAttribute("admin") Admin adminForm, Model model, RedirectAttributes ra) {
+	public String handleAdmin(@ModelAttribute("admin") Admin adminForm, Model model, RedirectAttributes ra,
+			@RequestParam("estado") String estadoForm) {
 		model.addAttribute("adminForm", adminForm);
 		System.out.println(adminForm);
-		
+		System.out.println("@RequestParam('estado'): " + estadoForm);
+
 		// Flash Attribute persiste entre diferentes Controladores
 		ra.addFlashAttribute("resultadoSave", "Cambios realizados correctamente.");
-		
+
 		// Redirección al Método Controlador para index "/" en IndexController
 		return "redirect:/";
 	}
