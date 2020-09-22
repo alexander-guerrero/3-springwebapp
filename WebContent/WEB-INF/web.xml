@@ -27,4 +27,24 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
+	<!-- INICIO: Configuración del "Spring Bean Configuration File" para la persistencia -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:com/alex/config/persistence-context.xml</param-value>
+	</context-param>
+	<!-- FIN: Configuración del "Spring Bean Configuration File" para la persistencia -->
+	
+	<!-- INICIO: Configuración para JNDI -->
+	<resource-ref>
+		<description>DB Connection</description>
+		<res-ref-name>jdbc/spring</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+	<!-- FIN: Configuración para JNDI -->
+
 </web-app>
