@@ -27,7 +27,7 @@
 	</p>
 	<p>
 		Respuesta luego de enviar el formulario: <br />
-		<c:out value="${adminForm}" />
+		<c:out value="${respuesta}" />
 	</p>
 </body>
 </html>
