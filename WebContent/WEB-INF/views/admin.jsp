@@ -25,11 +25,6 @@
 				<td><sf:input path="cargo" /></td>
 			</tr>
 			<tr>
-				<td>Estado</td>
-				<!-- Un control de formulario que no es manejado por Spring Form -->
-				<td><input name="estado" /></td>
-			</tr>
-			<tr>
 				<td colspan="2">
 					<input type="submit" value="Guardar cambios" />
 				</td>

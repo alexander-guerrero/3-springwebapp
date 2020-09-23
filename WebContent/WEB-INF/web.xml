@@ -34,7 +34,10 @@
 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:com/alex/config/persistence-context.xml</param-value>
+		<param-value>
+			classpath:com/alex/config/persistence-context.xml
+			classpath:com/alex/config/service-context.xml
+		</param-value>
 	</context-param>
 	<!-- FIN: Configuración del "Spring Bean Configuration File" para la persistencia -->
 	
