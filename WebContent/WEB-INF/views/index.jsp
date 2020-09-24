@@ -6,6 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Spring MVC</title>
+<script type="text/javascript" src='<c:url value="/resources/js/jquery-3.5.1.min.js" />'></script>
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+		alert('It works! :D');
+	});
+</script>
 </head>
 <body>
 	<h1>Index.jsp</h1>
