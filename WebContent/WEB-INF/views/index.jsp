@@ -9,7 +9,9 @@
 <script type="text/javascript" src='<c:url value="/resources/js/jquery-3.5.1.min.js" />'></script>
 <script type="text/javascript">
 	jQuery(document).ready(function() {
-		alert('It works! :D');
+		jQuery('.confirmacion').on('click', function() {
+			return confirm('¿Realmente deseas eliminar el registro?');
+		});
 	});
 </script>
 </head>
@@ -32,7 +34,7 @@
 			target="_blank">aquí</a>.
 	</p>
 	<p>
-		Respuesta luego de enviar el formulario:
+		Respuesta luego de enviar el formulario (Guardar o Modificar) o Eliminar un registro:
 		<c:out value="${respuesta}" />
 	</p>
 
@@ -42,7 +44,7 @@
 			<th>Nombre</th>
 			<th>Cargo</th>
 			<th>Fecha de Creación</th>
-			<th>Acción</th>
+			<th colspan="2">Acción</th>
 		</tr>
 		<!-- Iteración mediante JSTL y EL (Expression Language) -->
 		<c:forEach items="${adminLista}" var="admin">
@@ -52,6 +54,7 @@
 				<td><c:out value="${admin.cargo}"></c:out></td>
 				<td><c:out value="${admin.fechaCreacion}"></c:out></td>
 				<td><a href='<c:url value="admin/${admin.idAdm}/update" />'>Modificar</a></td>
+				<td><a class="confirmacion" href='<c:url value="admin/${admin.idAdm}/delete" />'>Eliminar</a></td>
 			</tr>
 		</c:forEach>
 	</table>

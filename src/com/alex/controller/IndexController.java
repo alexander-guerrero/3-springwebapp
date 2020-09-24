@@ -18,22 +18,22 @@ import com.alex.service.AdminService;
 //@SessionAttributes({"txtAbout", "txtAdmin"}) //Variables de sesión
 @SessionAttributes("txtAbout")
 public class IndexController {
-	
+
 	@Autowired
 	AdminService adminService;
 
 	@RequestMapping("/")
-	public String showIndex(HttpSession session, @ModelAttribute("resultadoSaveOrUpdate") String resultado, Model model) {
+	public String showIndex(HttpSession session, @ModelAttribute("resultado") String res, Model model) {
 		session.setAttribute("txtIndex", "Hola desde el HttpSession :O");
-		
+
 		// Agrega al Modelo el Flash Attribute pasado por parámetro
-		model.addAttribute("respuesta", resultado);
-		
+		model.addAttribute("respuesta", res);
+
 		// Lista de objetos Admin
 		List<Admin> admins = adminService.findAll();
 		// Agrega al Modelo la lista de objetos Admin
 		model.addAttribute("adminLista", admins);
-		
+
 		return "index";
 	}
 

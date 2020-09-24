@@ -36,11 +36,13 @@ public class AdminController {
 		
 		if (adminService.saveOrUpdate(adminForm)) {
 			// Flash Attribute persiste entre diferentes Controladores
-			ra.addFlashAttribute("resultadoSaveOrUpdate", "Cambios realizados correctamente :)");
+			ra.addFlashAttribute("resultado", "Cambios realizados correctamente :)");
 		} else {
 			// Flash Attribute persiste entre diferentes Controladores
-			ra.addFlashAttribute("resultadoSaveOrUpdate", "Cambios no realizados :(");
+			ra.addFlashAttribute("resultado", "Cambios no realizados :(");
 		}
+		// Se cambió el nombre del Flash Attribute de "resultadoSaveOrUpdate" a "resultado"
+		// para reutilizar luego el mismo nombre del atributo del Modelo en la Vista
 
 		// Redirección al Método Controlador para index "/" en IndexController
 		return "redirect:/";
@@ -55,6 +57,20 @@ public class AdminController {
 		ra.addFlashAttribute("adminUpdate", admin);
 		
 		return "redirect:/admin";
+	}
+	
+	@RequestMapping("admin/{idAdmin}/delete")
+	public String handleAdminDelete(@PathVariable("idAdmin") int id, RedirectAttributes ra) {
+		
+		if (adminService.delete(id)) {
+			ra.addFlashAttribute("resultado", "Registro eliminado correctamente :)");
+		} else {
+			ra.addFlashAttribute("resultado", "Registro no eliminado :(");
+		}
+		// Se usa "resultado" como nombre del Flash Attribute
+		// para reutilizar luego el mismo nombre del atributo del Modelo en la Vista
+		
+		return "redirect:/";
 	}
 
 }

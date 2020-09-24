@@ -42,4 +42,8 @@ public class AdminService {
 		}
 	}
 
+	public boolean delete(int id) {
+		return adminDao.delete(id);
+	}
+
 }
