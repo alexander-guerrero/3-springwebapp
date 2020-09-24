@@ -34,12 +34,12 @@ public class AdminController {
 		
 		System.out.println(adminForm);
 		
-		if (adminService.save(adminForm)) {
+		if (adminService.saveOrUpdate(adminForm)) {
 			// Flash Attribute persiste entre diferentes Controladores
-			ra.addFlashAttribute("resultadoSave", "Cambios realizados correctamente :)");
+			ra.addFlashAttribute("resultadoSaveOrUpdate", "Cambios realizados correctamente :)");
 		} else {
 			// Flash Attribute persiste entre diferentes Controladores
-			ra.addFlashAttribute("resultadoSave", "Cambios no realizados :(");
+			ra.addFlashAttribute("resultadoSaveOrUpdate", "Cambios no realizados :(");
 		}
 
 		// Redirección al Método Controlador para index "/" en IndexController

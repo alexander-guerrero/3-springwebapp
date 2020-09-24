@@ -30,4 +30,16 @@ public class AdminService {
 		return adminDao.findById(id);
 	}
 
+	public boolean saveOrUpdate(Admin admin) {
+		if (admin.getIdAdm() == 0) {
+			// Setear fecha de creación
+			admin.setFechaCreacion(new Timestamp(new Date().getTime()));
+			// Crea el registro (INSERT)
+			return adminDao.save(admin);
+		} else {
+			// Modifica el registro (UPDATE)
+			return adminDao.update(admin);
+		}
+	}
+
 }

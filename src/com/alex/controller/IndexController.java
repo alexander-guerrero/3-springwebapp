@@ -23,7 +23,7 @@ public class IndexController {
 	AdminService adminService;
 
 	@RequestMapping("/")
-	public String showIndex(HttpSession session, @ModelAttribute("resultadoSave") String resultado, Model model) {
+	public String showIndex(HttpSession session, @ModelAttribute("resultadoSaveOrUpdate") String resultado, Model model) {
 		session.setAttribute("txtIndex", "Hola desde el HttpSession :O");
 		
 		// Agrega al Modelo el Flash Attribute pasado por parámetro
