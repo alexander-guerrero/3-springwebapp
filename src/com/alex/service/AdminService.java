@@ -26,4 +26,8 @@ public class AdminService {
 		return adminDao.findAll();
 	}
 
+	public Admin findById(int id) {
+		return adminDao.findById(id);
+	}
+
 }

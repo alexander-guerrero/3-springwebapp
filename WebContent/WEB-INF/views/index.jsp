@@ -36,6 +36,7 @@
 			<th>Nombre</th>
 			<th>Cargo</th>
 			<th>Fecha de Creación</th>
+			<th>Acción</th>
 		</tr>
 		<!-- Iteración mediante JSTL y EL (Expression Language) -->
 		<c:forEach items="${adminLista}" var="admin">
@@ -44,6 +45,7 @@
 				<td><c:out value="${admin.nombre}"></c:out></td>
 				<td><c:out value="${admin.cargo}"></c:out></td>
 				<td><c:out value="${admin.fechaCreacion}"></c:out></td>
+				<td><a href='<c:url value="admin/${admin.idAdm}/update" />'>Modificar</a></td>
 			</tr>
 		</c:forEach>
 	</table>

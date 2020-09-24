@@ -16,6 +16,9 @@
 	<sf:form action="${pageContext.request.contextPath}/admin"
 		method="post" commandName="admin">
 		<table>
+			<!-- Creación de campos ocultos (Para la opción de Modificar) -->
+			<sf:input path="idAdm" type="hidden" />
+			<sf:input path="fechaCreacion" type="hidden" />
 			<tr>
 				<td>Nombre</td>
 				<td><sf:input path="nombre" /></td>
