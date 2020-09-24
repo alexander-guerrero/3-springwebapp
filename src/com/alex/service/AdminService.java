@@ -2,6 +2,7 @@ package com.alex.service;
 
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,10 @@ public class AdminService {
 		// Setear fecha de creación
 		admin.setFechaCreacion(new Timestamp(new Date().getTime()));
 		return adminDao.save(admin);
+	}
+
+	public List<Admin> findAll() {
+		return adminDao.findAll();
 	}
 
 }

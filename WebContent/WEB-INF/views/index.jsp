@@ -26,8 +26,26 @@
 			target="_blank">aquí</a>.
 	</p>
 	<p>
-		Respuesta luego de enviar el formulario: <br />
+		Respuesta luego de enviar el formulario:
 		<c:out value="${respuesta}" />
 	</p>
+
+	<table border="">
+		<tr>
+			<th>Id</th>
+			<th>Nombre</th>
+			<th>Cargo</th>
+			<th>Fecha de Creación</th>
+		</tr>
+		<!-- Iteración mediante JSTL y EL (Expression Language) -->
+		<c:forEach items="${adminLista}" var="admin">
+			<tr>
+				<td><c:out value="${admin.idAdm}"></c:out></td>
+				<td><c:out value="${admin.nombre}"></c:out></td>
+				<td><c:out value="${admin.cargo}"></c:out></td>
+				<td><c:out value="${admin.fechaCreacion}"></c:out></td>
+			</tr>
+		</c:forEach>
+	</table>
 </body>
 </html>
